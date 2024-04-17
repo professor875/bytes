@@ -1,7 +1,7 @@
 @props(['pname'])
-<div>
+<div class="text-center">
     <label for="{{$pname}}">
-        <span class="uppercase">{{$pname}} :</span> 
+        <span class="uppercase">{{$pname == 'password_confirmation' ? 'Confirm' : $pname}} :</span> 
         <input 
             id="{{$pname}}" 
             placeholder="Write your {{$pname}}..." 

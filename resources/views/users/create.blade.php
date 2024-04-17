@@ -21,6 +21,9 @@
                         Female
                         <input type="radio" id="gender" name="gender" value="female">
                     </label>
+                    @error('gender')
+                        <p class="text-red-500 font-semibold text-xs">{{ $message }}</p> 
+                    @enderror
                 </div>
 
                 <div class="flex justify-around">
@@ -38,6 +41,9 @@
                         other
                         <input type="checkbox" name="hobbies[]" value="other">
                     </label>
+                    @error('hobbies')
+                        <p class="text-red-500 font-semibold text-xs">{{ $message }}</p> 
+                    @enderror
                 </div>
 
                 <!-- country and about fields  -->
@@ -51,19 +57,25 @@
                         <option value="us">US</option>
                         <option value="other">other</option>
                     </select>
+                    @error('country')
+                        <p class="text-red-500 font-semibold text-xs">{{ $message }}</p> 
+                    @enderror
                 </div>
 
                 <div class=" flex flex-col space-y-4 justify-center items-center">
                     <textarea class="p-4 rounded-lg border border-blue-500"
                         placeholder="Let us know something about yourself !!"
                         name="about" id="about" cols="30" rows="3"></textarea>
+                        @error('about')
+                            <p class="text-red-500 font-semibold text-xs">{{ $message }}</p> 
+                        @enderror
                     <x-input pname="email" />
                 </div>
             
                 <!-- Password fields -->
                 <div class="flex w-full space-x-4 justify-between">
                     <x-input type="password" pname="password"/>
-                    <x-input type="password" pname="confirm" placeholder="Please confirm your Password.." name="password_confirmation"/>
+                    <x-input type="password" pname="password_confirmation" placeholder="Please confirm your Password.." name="password_confirmation"/>
                 </div>
 
                 <div class=" flex justify-center items-center">
